@@ -8,6 +8,7 @@ import { EditTimerModal } from './EditTimerModal';
 import { TimerAudio } from '../utils/audio';
 import { TimerControls } from './TimerControls';
 import { TimerProgress } from './TimerProgress';
+import { AddEditTimerModal } from './AddEditTimerModal';
 
 interface TimerItemProps {
   timer: Timer;
@@ -191,6 +192,7 @@ useEffect(() => {
         onClose={() => setIsEditModalOpen(false)}
         timer={timer}
       />
+      <AddEditTimerModal />
     </>
   );
 };

@@ -3,13 +3,16 @@ import { X, Clock } from 'lucide-react';
 import { useTimerStore } from '../store/useTimerStore';
 import { validateTimerForm } from '../utils/validation';
 import { TimerModalButtons } from './TimerModalButtons';
+import { Timer } from '../types/timer';
 
-interface AddTimerModalProps {
+
+interface AddEditTimerModal {
   isOpen: boolean;
   onClose: () => void;
+  timer: Timer;
 }
 
-export const AddTimerModal: React.FC<AddTimerModalProps> = ({ isOpen, onClose }) => {
+export const AddEditTimerModal: React.FC<AddEditTimerModal> = ({ isOpen, onClose, timer }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [hours, setHours] = useState(0);
